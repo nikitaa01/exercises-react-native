@@ -1,7 +1,8 @@
 {
   "expo": {
+    "scheme": "myapp",
     "name": "exercises-react-native",
-    "slug": "exercises-react-native",
+    "slug": "exercises",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -14,14 +15,30 @@
     "ios": {
       "supportsTablet": true
     },
+    "androidNavigationBar": {
+      "backgroundColor": "#111827"
+    },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.nikitaa01.exercises"
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "plugins": [
+      "expo-router"
+    ],
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "3d9efa64-6d6e-4d32-84ea-c9e483985083"
+      }
+    },
+    "owner": "nikitaa01"
   }
 }
