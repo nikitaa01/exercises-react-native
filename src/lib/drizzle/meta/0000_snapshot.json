@@ -1,7 +1,7 @@
 {
   "version": "6",
   "dialect": "sqlite",
-  "id": "4580a722-57b3-4411-8751-4bb3c101a195",
+  "id": "b45c16b2-2ff6-433d-ae2c-8312e51eea66",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "tables": {
     "exercise": {
@@ -139,11 +139,11 @@
         },
         "created_at": {
           "name": "created_at",
-          "type": "text",
+          "type": "integer",
           "primaryKey": false,
           "notNull": true,
           "autoincrement": false,
-          "default": "(CURRENT_TIMESTAMP)"
+          "default": "(strftime('%s', 'now') * 1000)"
         }
       },
       "indexes": {},
@@ -197,7 +197,7 @@
         },
         "completed_at": {
           "name": "completed_at",
-          "type": "text",
+          "type": "integer",
           "primaryKey": false,
           "notNull": false,
           "autoincrement": false

@@ -44,7 +44,7 @@ export const completeWorkout = () => {
       return false;
     }
     db.update(workout)
-      .set({ completedAt: sql`CURRENT_TIMESTAMP` })
+      .set({ completedAt: sql`strftime('%s', 'now') * 1000` })
       .where(eq(workout.id, currentWorkout.workout.id))
       .execute();
 

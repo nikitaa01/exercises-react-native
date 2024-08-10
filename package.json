@@ -8,7 +8,9 @@
     "ios": "expo start --ios",
     "web": "expo start --web",
     "lint": "eslint .",
-    "migrate": "drizzle-kit migrate"
+    "drizzle:generate": "drizzle-kit generate",
+    "drizzle:drop": "drizzle-kit drop",
+    "build:apk": "eas build --platform android --profile preview"
   },
   "dependencies": {
     "@expo/metro-runtime": "~3.2.1",
@@ -21,6 +23,7 @@
     "expo-constants": "~16.0.2",
     "expo-linking": "~6.3.1",
     "expo-router": "~3.5.18",
+    "expo-sharing": "~12.0.1",
     "expo-sqlite": "^14.0.4",
     "expo-status-bar": "~1.12.1",
     "nativewind": "^2.0.11",
@@ -29,11 +32,10 @@
     "react-native": "0.74.3",
     "react-native-safe-area-context": "4.10.1",
     "react-native-screens": "3.31.1",
+    "react-native-svg": "^15.5.0",
     "react-native-vector-icons": "^10.1.0",
     "react-native-web": "~0.19.10",
-    "zustand": "^4.5.4",
-    "expo-clipboard": "~6.0.3",
-    "expo-sharing": "~12.0.1"
+    "zustand": "^4.5.4"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",

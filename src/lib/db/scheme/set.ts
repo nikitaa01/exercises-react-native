@@ -1,5 +1,5 @@
 import { sql } from "drizzle-orm";
-import { integer, sqliteTable, text } from "drizzle-orm/sqlite-core";
+import { integer, sqliteTable } from "drizzle-orm/sqlite-core";
 import { exercise } from "./exercise";
 import { workout } from "./workout";
 
@@ -15,8 +15,8 @@ export const set = sqliteTable("set", {
   }),
   weight: integer("weight").notNull(),
   reps: integer("reps").notNull(),
-  createdAt: text("created_at")
-    .default(sql`CURRENT_TIMESTAMP`)
+  createdAt: integer("created_at")
+    .default(sql`(strftime('%s', 'now') * 1000)`)
     .notNull(),
 });
 

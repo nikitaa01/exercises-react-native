@@ -1,4 +1,4 @@
-import { integer, sqliteTable, text } from "drizzle-orm/sqlite-core";
+import { integer, sqliteTable } from "drizzle-orm/sqlite-core";
 import { routine } from "./routine";
 
 export const workout = sqliteTable("workout", {
@@ -7,7 +7,7 @@ export const workout = sqliteTable("workout", {
     onDelete: "cascade",
     onUpdate: "cascade",
   }),
-  completedAt: text("completed_at"),
+  completedAt: integer("completed_at"),
 });
 
 export type Workout = typeof workout.$inferSelect;

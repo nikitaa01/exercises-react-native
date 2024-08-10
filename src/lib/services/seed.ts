@@ -50,9 +50,9 @@ const seed = () => {
       },
       {
         id: 4,
-        name: "Sentadilla isometrica",
+        name: "Abducción de caderas",
         description: "",
-        muscleGroup: "cuádriceps",
+        muscleGroup: "gluteos",
         routineId: 2,
       },
       {
@@ -92,9 +92,9 @@ const seed = () => {
       },
       {
         id: 10,
-        name: "Extensión cuádriceps",
+        name: "Hip thrust",
         description: "",
-        muscleGroup: "cuádriceps",
+        muscleGroup: "gluteos",
         routineId: 2,
       },
       {

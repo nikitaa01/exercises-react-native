@@ -45,6 +45,7 @@ export default function Page() {
           index={sets.length + 1}
           exerciseId={Number(exerciseId)}
           workoutId={Number(workoutId)}
+          lastCurrentWorkoutSet={sets.length ? sets[0] : undefined}
           lastWorkoutWeight={
             lastSets.length
               ? lastSets[sets?.length ?? 0]?.weight?.toString()
@@ -59,6 +60,7 @@ export default function Page() {
             key={Math.random()}
             set={set}
             index={sets.length - index}
+            lastSet={lastSets[sets?.length - index - 1]}
             defaultWeight={set.weight.toString()}
             defaultReps={set.reps.toString()}
           />
