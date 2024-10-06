@@ -1,10 +1,22 @@
-import type { Set } from "@/lib/db/scheme/set";
+import { type Set } from "@/lib/db/scheme/set";
 import { delay } from "@/lib/utils/delay";
 import { Nullable } from "@/types/utils";
 import { useEffect, useState } from "react";
+import { AppState } from "react-native";
 
 export default function useSetsRestTimer(lastSet: Nullable<Set>) {
   const [timer, setTimer] = useState<{ m: number; s: number } | null>(null);
+
+  useEffect(() => {
+    const subscription = AppState.addEventListener("change", (state) => {
+      if (state === "active") {
+        setTimer(null);
+      }
+    });
+    return () => {
+      subscription.remove();
+    };
+  }, []);
 
   useEffect(() => {
     if (!lastSet || timer) return;
@@ -36,8 +48,7 @@ export default function useSetsRestTimer(lastSet: Nullable<Set>) {
     };
 
     counterUpdater();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [lastSet]);
+  }, [lastSet, timer]);
 
   return timer;
 }
